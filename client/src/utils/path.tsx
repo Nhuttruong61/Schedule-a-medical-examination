@@ -5,6 +5,10 @@ const path = {
 	LOGIN: "login",
 	BLOGS: "blogs",
 	OUR_SERVICES: "services",
+	ALL_SERVICES: "all-services",
+	AT_HOME: "at-home",
+	AT_HOSPITAL: "at-hospital",
+	CONTACT: "contact",
 
 	//Admin
 	ADMIN: "admin",

@@ -1,16 +1,29 @@
 import { Route, Routes } from "react-router-dom";
+import { ThemeProvider } from "@/components/ThemeProvider";
+import {
+	PublicLayout,
+	NoPage,
+	HomePage,
+	LoginPage,
+	AtHomePage,
+	AtHospital,
+	BlogPage,
+	ContactPage,
+} from "./pages/public";
+import path from "@/utils/path";
 
-import PublicLayout from "./pages/public/PublicLayOut.tsx";
-import NoPage from "./pages/public/NoPage.tsx";
-import HomePage from "./pages/public/HomePage.tsx";
-import LoginPage from "./pages/public/LoginPage.tsx";
 function App() {
 	return (
-		<div>
+		<ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
 			<Routes>
-				<Route path="*" element={<NoPage />}></Route>
-				<Route path="/" element={<PublicLayout />}>
-					<Route path="" element={<HomePage />}></Route>
+				<Route path={path.ALL} element={<NoPage />}></Route>
+				<Route path={path.PUBLIC_LAYOUT} element={<PublicLayout />}>
+					<Route path={path.HOME} element={<HomePage />}></Route>
+					<Route path={path.HOME} element={<HomePage />}></Route>
+					<Route path={path.AT_HOME} element={<AtHomePage />}></Route>
+					<Route path={path.AT_HOSPITAL} element={<AtHospital />}></Route>
+					<Route path={path.BLOGS} element={<BlogPage />}></Route>
+					<Route path={path.CONTACT} element={<ContactPage />}></Route>
 				</Route>
 				{/* <Route path={path.ADMIN} element={<AdminLayout />}>
 					<Route path={path.DASHBOARD} element={<Dashboard />}></Route>
@@ -19,9 +32,9 @@ function App() {
 					<Route path={path.PERSONAL} element={<Personal />}></Route>
 				</Route> */}
 
-				<Route path="/login" element={<LoginPage />}></Route>
+				<Route path={path.LOGIN} element={<LoginPage />}></Route>
 			</Routes>
-		</div>
+		</ThemeProvider>
 	);
 }
 

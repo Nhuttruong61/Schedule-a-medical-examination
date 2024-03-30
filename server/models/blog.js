@@ -9,8 +9,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       Blog.belongsTo(models.User, {
-        foreignKey: "BlogUser",
-        as: "BlogUserInfo",
+        foreignKey: "userId",
       });
     }
   }
@@ -20,6 +19,7 @@ module.exports = (sequelize, DataTypes) => {
       title: DataTypes.STRING,
       description: DataTypes.STRING,
       img: {
+        type: DataTypes.TEXT,
         get() {
           const rawValue = this.getDataValue("img");
           return rawValue ? JSON.parse(rawValue) : [];

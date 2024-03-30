@@ -4,12 +4,13 @@ module.exports = (sequelize, DataTypes) => {
   class Doctor extends Model {
     static associate(models) {
       Doctor.belongsTo(models.User, {
-        foreignKey: "doctor",
-        as: "doctorInfo",
+        foreignKey: "userId",
       });
-      Doctor.belongsTo(models.Departments, {
-        foreignKey: "department",
-        as: "departmentInfo",
+      Doctor.belongsTo(models.Department, {
+        foreignKey: "departmentId",
+      });
+      Doctor.hasMany(models.Appoitment, {
+        foreignKey: "doctorId",
       });
     }
   }
@@ -21,7 +22,7 @@ module.exports = (sequelize, DataTypes) => {
     },
     {
       sequelize,
-      modelName: "Doctors",
+      modelName: "Doctor",
     }
   );
   return Doctor;

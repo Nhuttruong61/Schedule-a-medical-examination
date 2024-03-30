@@ -21,6 +21,10 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
+      role: {
+        type: Sequelize.ENUM(["DOCTOR", "ADMIN"]),
+        defaultValue: "DOCTOR",
+      },
       gender: {
         type: Sequelize.ENUM(["MALE", "FEMALE"]),
         allowNull: false,
@@ -29,9 +33,11 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      role: {
-        type: Sequelize.ENUM(["1", "2"]),
-        defaultValue: "1",
+      address: {
+        type: Sequelize.STRING,
+      },
+      avatar: {
+        type: Sequelize.TEXT,
       },
       createdAt: {
         allowNull: false,

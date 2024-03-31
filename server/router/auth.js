@@ -2,7 +2,7 @@ const Joi = require("joi");
 const { stringReq, string, numberReq } = require("../middleware/joiSheme");
 const validateDto = require("../middleware/validate");
 const router = require("express").Router();
-const UserController = require("../controller/auth");
+const AuthController = require("../controller/auth");
 const { verifyRfToken, verifyToken } = require("../middleware/authen");
 router.post(
   "/rerister",
@@ -15,7 +15,7 @@ router.post(
       gender: stringReq,
     })
   ),
-  UserController.register
+  AuthController.register
 );
 router.post(
   "/login",
@@ -25,9 +25,9 @@ router.post(
       password: stringReq,
     })
   ),
-  UserController.login
+  AuthController.login
 );
-router.post("/refresh", verifyRfToken, UserController.refesToken);
-router.post("/logout", verifyToken, UserController.logout);
+router.post("/refresh", verifyRfToken, AuthController.refesToken);
+router.post("/logout", verifyToken, AuthController.logout);
 
 module.exports = router;

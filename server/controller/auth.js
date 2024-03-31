@@ -74,7 +74,11 @@ const login = async (req, res) => {
         expiresIn: "15d",
       }
     );
-    cookieParser("refesToken", refesToken);
+    res.cookie("token", refesToken, {
+      maxAge: 15 * 24 * 60 * 60 * 1000,
+      httpOnly: true,
+      sameSite: "strict",
+    });
     if (token) {
       return res.status(200).json({
         success: true,
@@ -94,21 +98,27 @@ const refesToken = (req, res) => {
     const token = jwt.sign({ id: id, role: role }, process.env.JWT_SECRET, {
       expiresIn: "10d",
     });
-    if (token) {
-      resolve({
-        success: true,
-        token,
-      });
-    }
+    res.status(200).json({
+      success: true,
+      token: token,
+    });
   } catch (err) {
-    reject(err);
+    return res.status(500).json({
+      mes: err.mes,
+    });
   }
 };
-const logout = () => {
+const logout = (req, res) => {
   try {
-    clearCookie("refesToken");
+    res.clearCookie("token");
+    return res.status(200).json({
+      success: true,
+      message: "Đăng xuất thành công",
+    });
   } catch (err) {
-    reject(err);
+    return res.status(500).json({
+      mes: err.mes,
+    });
   }
 };
 

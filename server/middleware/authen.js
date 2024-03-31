@@ -7,7 +7,7 @@ const verifyToken = (req, res, next) => {
       mes: "Token không tìm thấy",
     });
   const rawToken = token.split(" ")[1];
-  jwt.verify(rawToken, process.env.TOKEN_SECRET, (err, decode) => {
+  jwt.verify(rawToken, process.env.JWT_SECRET, (err, decode) => {
     if (err) {
       return res.status(401).json({
         mes: "Token đã hết hạn",
@@ -17,15 +17,23 @@ const verifyToken = (req, res, next) => {
     next();
   });
 };
-
+const isAdmin = (req, res, next) => {
+  const { role } = req.user;
+  if (role !== "ADMIN") {
+    return res.status(401).json({
+      mes: "Bạn không phải admin",
+    });
+  }
+  next();
+};
 const verifyRfToken = (req, res, next) => {
-  const { refesToken } = req.cookies;
-  if (!refesToken)
+  const { token } = req.cookies;
+  if (!token)
     return res.status(401).json({
       mes: "Token không tìm thấy",
     });
-  const rawToken = refesToken.split(" ")[1];
-  jwt.verify(rawToken, process.env.TOKEN_SECRET, (err, decode) => {
+
+  jwt.verify(token, process.env.JWT_SECRET, (err, decode) => {
     if (err) {
       return res.status(401).json({
         mes: "Token đã hết hạn",
@@ -36,4 +44,4 @@ const verifyRfToken = (req, res, next) => {
   });
 };
 
-module.exports = { verifyToken, verifyRfToken };
+module.exports = { verifyToken, verifyRfToken, isAdmin };

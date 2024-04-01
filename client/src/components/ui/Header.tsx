@@ -5,6 +5,7 @@ import { NavigationMenuLink, NavigationMenuList, NavigationMenu } from "@/compon
 import { MenuIcon, ShirtIcon } from "lucide-react";
 import { Link } from "react-router-dom";
 import path from "@/utils/path";
+import { ModeToggle } from "../ModeToggle";
 const Header = () => {
 	return (
 		<div>
@@ -90,10 +91,12 @@ const Header = () => {
 						</NavigationMenuList>
 					</NavigationMenu>
 					<div className="ml-auto flex gap-2">
+						<div>test</div>
 						<Button variant="outline">
 							<Link to={path.LOGIN}>Đăng nhập</Link>
 						</Button>
 						<Button>Đăng ký</Button>
+						<ModeToggle />
 					</div>
 				</header>
 			</div>

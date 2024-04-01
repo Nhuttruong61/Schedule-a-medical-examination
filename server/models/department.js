@@ -10,7 +10,6 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       Department.hasMany(models.Doctor, {
         foreignKey: "departmentId",
-        as: "departmentId",
         onDelete: "CASCADE",
         onUpdate: "CASCADE",
       });
@@ -20,6 +19,7 @@ module.exports = (sequelize, DataTypes) => {
     {
       Title: DataTypes.STRING,
       img: {
+        type: DataTypes.TEXT,
         get() {
           const rawValue = this.getDataValue("img");
           return rawValue ? JSON.parse(rawValue) : [];

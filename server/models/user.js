@@ -4,22 +4,14 @@ module.exports = (sequelize, DataTypes) => {
   class User extends Model {
     static associate(models) {
       User.hasMany(models.Doctor, {
-        foreignKey: "user",
-        as: "user",
+        foreignKey: "userId",
         onDelete: "CASCADE",
         onUpdate: "CASCADE",
-        scope: {
-          ownerType: "doctor",
-        },
       });
       User.hasMany(models.Blog, {
-        foreignKey: "user",
-        as: "user",
+        foreignKey: "userId",
         onDelete: "CASCADE",
         onUpdate: "CASCADE",
-        scope: {
-          ownerType: "blog",
-        },
       });
     }
   }
@@ -39,6 +31,7 @@ module.exports = (sequelize, DataTypes) => {
       password: DataTypes.STRING,
       address: DataTypes.STRING,
       avatar: {
+        type: DataTypes.TEXT,
         get() {
           const rawValue = this.getDataValue("avatar");
           return rawValue ? JSON.parse(rawValue) : [];

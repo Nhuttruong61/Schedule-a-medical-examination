@@ -8,13 +8,14 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      Appoitment.belongsTo(models.Doctors, {
+      Appoitment.belongsTo(models.Doctor, {
         foreignKey: "doctorId",
-        as: "doctorInfo",
       });
-      Appoitment.belongsTo(models.Patients, {
-        foreignKey: "PatientId",
-        as: "PatientInfo",
+      Appoitment.belongsTo(models.Patient, {
+        foreignKey: "parentId",
+      });
+      Appoitment.belongsTo(models.Service, {
+        foreignKey: "serviceId",
       });
     }
   }
@@ -24,7 +25,10 @@ module.exports = (sequelize, DataTypes) => {
       time: DataTypes.TIME,
       patientId: DataTypes.UUID,
       doctorId: DataTypes.UUID,
-      status: DataTypes.ENUM,
+      status: {
+        type: DataTypes.ENUM,
+        values: ["Processing", "Accept", "Refuse"],
+      },
     },
     {
       sequelize,

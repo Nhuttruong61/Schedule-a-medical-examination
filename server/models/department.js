@@ -17,8 +17,8 @@ module.exports = (sequelize, DataTypes) => {
   }
   Department.init(
     {
-      Title: DataTypes.STRING,
-      img: {
+      title: DataTypes.STRING,
+      avatar: {
         type: DataTypes.TEXT,
         get() {
           const rawValue = this.getDataValue("img");

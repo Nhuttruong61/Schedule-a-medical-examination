@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom";
-import { ThemeProvider } from "@/components/ThemeProvider";
+import { ThemeProvider } from "@/components/ui/theme-provider";
 import {
 	PublicLayout,
 	NoPage,

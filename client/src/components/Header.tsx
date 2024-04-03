@@ -1,11 +1,13 @@
-import { Button } from "@/components/ui";
-import { SheetTrigger, SheetContent, Sheet } from "@/components/ui/sheet";
-
-import { NavigationMenuLink, NavigationMenuList, NavigationMenu } from "@/components/ui/navigation-menu";
 import { MenuIcon, ShirtIcon } from "lucide-react";
 import { Link } from "react-router-dom";
+
+import { SheetTrigger, SheetContent, Sheet } from "@/components/ui/sheet";
+import { Button } from "@/components/ui/button";
+import { NavigationMenuLink, NavigationMenuList, NavigationMenu } from "@/components/ui/navigation-menu";
+
 import path from "@/utils/path";
-import { ModeToggle } from "../ModeToggle";
+import { InputSearch } from "@/components";
+import { ModeToggle } from "./";
 const Header = () => {
 	return (
 		<div>
@@ -90,8 +92,9 @@ const Header = () => {
 							</NavigationMenuLink>
 						</NavigationMenuList>
 					</NavigationMenu>
+
 					<div className="ml-auto flex gap-2">
-						<div>test</div>
+						<InputSearch />
 						<Button variant="outline">
 							<Link to={path.LOGIN}>Đăng nhập</Link>
 						</Button>

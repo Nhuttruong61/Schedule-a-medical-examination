@@ -8,7 +8,7 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      Patient.hasMany(models.Doctor, {
+      Patient.hasMany(models.Appoitment, {
         foreignKey: "parentId",
         onDelete: "CASCADE",
         onUpdate: "CASCADE",

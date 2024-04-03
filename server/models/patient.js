@@ -9,7 +9,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       Patient.hasMany(models.Appoitment, {
-        foreignKey: "parentId",
+        foreignKey: "patientId",
         onDelete: "CASCADE",
         onUpdate: "CASCADE",
       });

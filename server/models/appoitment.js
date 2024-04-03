@@ -12,7 +12,7 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: "doctorId",
       });
       Appoitment.belongsTo(models.Patient, {
-        foreignKey: "parentId",
+        foreignKey: "patientId",
       });
       Appoitment.belongsTo(models.Service, {
         foreignKey: "serviceId",
@@ -25,6 +25,7 @@ module.exports = (sequelize, DataTypes) => {
       time: DataTypes.TIME,
       patientId: DataTypes.UUID,
       doctorId: DataTypes.UUID,
+      serviceId: DataTypes.UUID,
       status: {
         type: DataTypes.ENUM,
         values: ["Processing", "Accept", "Refuse"],

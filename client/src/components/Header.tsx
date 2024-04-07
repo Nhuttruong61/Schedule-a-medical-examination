@@ -2,12 +2,13 @@ import { MenuIcon, ShirtIcon } from "lucide-react";
 import { Link } from "react-router-dom";
 
 import { SheetTrigger, SheetContent, Sheet } from "@/components/ui/sheet";
-import { Button } from "@/components/ui/button";
+
 import { NavigationMenuLink, NavigationMenuList, NavigationMenu } from "@/components/ui/navigation-menu";
 
 import path from "@/utils/path";
 import { InputSearch } from "@/components";
 import { ModeToggle } from "./";
+import { Button } from "@/components/ui/button";
 const Header = () => {
 	return (
 		<div>

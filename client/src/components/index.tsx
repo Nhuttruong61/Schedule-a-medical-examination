@@ -6,3 +6,4 @@ export { default as InputSearch } from "./InputSearch";
 export { default as ModeToggle } from "./ModeToggle";
 export { default as ServiceBlock } from "./ServiceBlock";
 export { default as Specialist } from "./Specialist";
+export { default as HotDoctor } from "./HotDoctor";

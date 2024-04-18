@@ -6,7 +6,7 @@ const HotDoctor = () => {
 		<Carousel className="w-full">
 			<CarouselContent className="-ml-1 gap-2">
 				{hotDoctorContent.map((el, index) => (
-					<CarouselItem key={index} className="pl-1 md:basis-1/2 lg:basis-1/3 ">
+					<CarouselItem key={index} className="pl-1 md:basis-1/2 lg:basis-1/4 ">
 						<div className="p-1">
 							<Card className="px-10 border-none shadow-none bg-transparent">
 								<CardContent className="flex aspect-square items-center justify-center p-4 flex-col gap-4">

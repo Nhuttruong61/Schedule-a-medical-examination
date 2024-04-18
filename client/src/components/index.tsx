@@ -7,3 +7,4 @@ export { default as ModeToggle } from "./ModeToggle";
 export { default as ServiceBlock } from "./ServiceBlock";
 export { default as Specialist } from "./Specialist";
 export { default as HotDoctor } from "./HotDoctor";
+export { default as BlogBlock } from "./BlogBlock";

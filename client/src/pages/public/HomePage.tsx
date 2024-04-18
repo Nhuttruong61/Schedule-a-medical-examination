@@ -1,6 +1,13 @@
-import { ServiceBlock, ContentRound, Banner, Specialist, HotDoctor } from "@/components";
+import { ServiceBlock, ContentRound, Banner, Specialist, HotDoctor, BlogBlock } from "@/components";
 import { Button } from "@/components/ui/button";
-import { farCareContent, hospitalContent, serviceContent, specialistContent } from "@/utils/contants";
+import {
+	doctorQuestion,
+	farCareContent,
+	hospitalContent,
+	serviceContent,
+	specialistContent,
+	tipsForUser,
+} from "@/utils/contants";
 const HomePage = () => {
 	return (
 		<div>
@@ -29,14 +36,17 @@ const HomePage = () => {
 					<h1 className="font-semibold mb-4 text-2xl">Cơ sở y tế</h1>
 					<Button>Xem thêm</Button>
 				</div>
-				<Specialist listContent={hospitalContent} />
+
+				<Specialist listContent={hospitalContent} size="sm" />
 			</div>
 			<div className="bg-[url('https://cdn.bookingcare.vn/fo/w1920/2023/11/01/140311-background5.png')] w-full">
 				<div className="flex justify-between mt-8 mx-[120px] pt-4">
 					<h1 className="font-semibold mb-4 text-2xl">Bác sĩ nổi bật</h1>
 					<Button>Xem thêm</Button>
 				</div>
-				<HotDoctor />
+				<div className="mx-[120px]">
+					<HotDoctor />
+				</div>
 			</div>
 			<div className="mx-[120px] mt-[50px]">
 				<div className="flex justify-between mt-8">
@@ -61,6 +71,26 @@ const HomePage = () => {
 				<div className="mx-[120px]">
 					<Specialist listContent={hospitalContent} />
 				</div>
+			</div>
+			<div className="flex justify-between mt-8 mx-[120px] pt-4">
+				<h1 className="font-semibold mb-4 text-2xl">Bác sĩ hỏi đáp</h1>
+			</div>
+			<div className="mx-[120px]">
+				<Specialist listContent={doctorQuestion} />
+			</div>
+			<div className="flex justify-between mt-8 mx-[120px] pt-4">
+				<h1 className="font-semibold mb-4 text-2xl">Cẩm nang</h1>
+				<Button>Xem thêm</Button>
+			</div>
+			<div className="mx-[120px]">
+				<BlogBlock listContent={tipsForUser} />
+			</div>
+			<div className="flex justify-between mt-8 mx-[120px] pt-4">
+				<h1 className="font-semibold mb-4 text-2xl">Sống khỏe suốt đời</h1>
+				<Button>Xem thêm</Button>
+			</div>
+			<div className="mx-[120px]">
+				<BlogBlock listContent={tipsForUser} />
 			</div>
 		</div>
 	);

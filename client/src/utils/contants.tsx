@@ -34,6 +34,35 @@ const hospitalContent = [
 	{ icon: "https://cdn.bookingcare.vn/fo/w640/2019/03/11/152704logo-bvcr-moi.jpg", name: "Bệnh viện Chợ Rẫy" },
 	{ icon: "https://cdn.bookingcare.vn/fo/w640/2019/03/11/152704logo-bvcr-moi.jpg", name: "Bệnh viện Chợ Rẫy" },
 ];
+const doctorQuestion = [
+	{ icon: "https://cdn.bookingcare.vn/fo/w640/2023/11/01/141028-hoidapcongdong.jpeg", name: "Hỏi đáp cộng đồng" },
+];
+const tipsForUser = [
+	{
+		img: "https://cdn.bookingcare.vn/fo/w640/2023/11/01/141028-hoidapcongdong.jpeg",
+		name: "Tìm hiểu phương pháp tiêm filler đang được ưa chuộng hiệ",
+	},
+	{
+		img: "https://cdn.bookingcare.vn/fo/w640/2024/04/08/202848-phuong-phap-tiem-filler.png",
+		name: "Tìm hiểu phương pháp tiêm filler đang được ưa chuộng hiệ",
+	},
+	{
+		img: "https://cdn.bookingcare.vn/fo/w640/2023/11/01/141028-hoidapcongdong.jpeg",
+		name: "Tìm hiểu phương pháp tiêm filler đang được ưa chuộng hiệ",
+	},
+	{
+		img: "https://cdn.bookingcare.vn/fo/w640/2023/11/01/141028-hoidapcongdong.jpeg",
+		name: "Tìm hiểu phương pháp tiêm filler đang được ưa chuộng hiệ",
+	},
+	{
+		img: "https://cdn.bookingcare.vn/fo/w640/2023/11/01/141028-hoidapcongdong.jpeg",
+		name: "Tìm hiểu phương pháp tiêm filler đang được ưa chuộng hiệ",
+	},
+	{
+		img: "https://cdn.bookingcare.vn/fo/w640/2023/11/01/141028-hoidapcongdong.jpeg",
+		name: "Tìm hiểu phương pháp tiêm filler đang được ưa chuộng hiệ",
+	},
+];
 const farCareContent = [
 	{
 		icon: "https://cdn.bookingcare.vn/fo/w1920/2024/01/04/160245-tam-ly-tu-xa.png",
@@ -128,4 +157,12 @@ const hotDoctorContent = [
 		special: "Thần kinh, Nội khoa",
 	},
 ];
-export { serviceContent, specialistContent, hospitalContent, hotDoctorContent, farCareContent };
+export {
+	serviceContent,
+	specialistContent,
+	hospitalContent,
+	hotDoctorContent,
+	farCareContent,
+	doctorQuestion,
+	tipsForUser,
+};

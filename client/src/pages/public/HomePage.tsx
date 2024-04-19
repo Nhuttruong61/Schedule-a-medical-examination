@@ -1,11 +1,13 @@
 import { ServiceBlock, ContentRound, Banner, Specialist, HotDoctor, BlogBlock } from "@/components";
 import { Button } from "@/components/ui/button";
+import video from "@/assets/video/CÀ PHÊ KHỞI NGHIỆP VTV1 - BOOKINGCARE - HỆ THỐNG ĐẶT LỊCH KHÁM TRỰC TUYẾN.mp4";
 import {
 	doctorQuestion,
 	farCareContent,
 	hospitalContent,
 	serviceContent,
 	specialistContent,
+	entertainmentIcon,
 	tipsForUser,
 } from "@/utils/contants";
 const HomePage = () => {
@@ -87,6 +89,30 @@ const HomePage = () => {
 			</div>
 			<div className="flex justify-between mt-8 mx-[120px] pt-4">
 				<h1 className="font-semibold mb-4 text-2xl">Sống khỏe suốt đời</h1>
+				<Button>Xem thêm</Button>
+			</div>
+			<div className="mx-[120px]">
+				<BlogBlock listContent={tipsForUser} />
+			</div>
+			<div className="bg-[url('https://cdn.bookingcare.vn/fo/2023/11/01/140309-background3.png')] w-full pb-8 pt-1">
+				<div className="flex justify-between mt-2 mx-[120px] pt-4">
+					<h1 className="font-semibold mb-4 text-3xl text-center w-full">Truyền thông nói về BookingCare</h1>
+				</div>
+				<div className="mx-[120px] flex gap-4">
+					<div className="flex-1 border-none mr-4">
+						<video src={video} loop autoPlay controls className="rounded-lg border-none"></video>
+					</div>
+					<div className="grid grid-cols-2 gap-2 flex-1">
+						{entertainmentIcon.map((el, index) => (
+							<div key={index} className="bg-white flex items-center rounded-md w-[274px] mb-4">
+								<img src={el.icon} alt="vtv1" className="object-contain w-full h-[38px]" />
+							</div>
+						))}
+					</div>
+				</div>
+			</div>
+			<div className="flex justify-between mt-8 mx-[120px] pt-4">
+				<h1 className="font-semibold mb-4 text-2xl">Dành cho bác sĩ và cơ sở y tế</h1>
 				<Button>Xem thêm</Button>
 			</div>
 			<div className="mx-[120px]">

@@ -157,6 +157,32 @@ const hotDoctorContent = [
 		special: "Thần kinh, Nội khoa",
 	},
 ];
+const entertainmentIcon = [
+	{
+		icon: "https://bookingcare.vn/assets/truyenthong/vtv1.png",
+	},
+	{
+		icon: "https://bookingcare.vn/assets/truyenthong/vtv1.png",
+	},
+	{
+		icon: "https://bookingcare.vn/assets/truyenthong/vtv1.png",
+	},
+	{
+		icon: "https://bookingcare.vn/assets/truyenthong/vtv1.png",
+	},
+	{
+		icon: "https://bookingcare.vn/assets/truyenthong/vtv1.png",
+	},
+	{
+		icon: "https://bookingcare.vn/assets/truyenthong/vtv1.png",
+	},
+	{
+		icon: "https://bookingcare.vn/assets/truyenthong/vtv1.png",
+	},
+	{
+		icon: "https://bookingcare.vn/assets/truyenthong/vtv1.png",
+	},
+];
 export {
 	serviceContent,
 	specialistContent,
@@ -165,4 +191,5 @@ export {
 	farCareContent,
 	doctorQuestion,
 	tipsForUser,
+	entertainmentIcon,
 };
